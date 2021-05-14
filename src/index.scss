@@ -1,0 +1,15 @@
+/*Overwrite Bootstrap*/
+$primary: #031633;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": #ff4136,
+);
+/*Overwrite Bootstrap*/
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+/*Shared Components*/
+@import "./styles/components/Shared/header.scss";
+@import "./styles/components/Shared/footer.scss";
+/*Shared Components*/
