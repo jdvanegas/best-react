@@ -1,23 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
-import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router } from "react-router-dom";
-import routes from "./routes/routes";
-import Header from "./components/Shared/Header";
-import Footer from "./components/Shared/Footer";
-import { ProvideAuth } from "./components/Shared/ProvideAuth";
+import App from "./App";
 
-render(
-  <ProvideAuth>
-    <Router>
-      <Header />
-      {routes}
-      <Footer />
-    </Router>
-  </ProvideAuth>,
-  document.getElementById("root")
-);
+import "./index.scss";
+
+render(<App />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

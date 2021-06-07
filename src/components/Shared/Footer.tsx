@@ -3,7 +3,7 @@ import React from "react";
 const Footer = (): JSX.Element => {
   return (
     <footer>
-      <p>Copy rigth - micro-bus</p>
+      <h6>Copy rigth - micro-bus</h6>
     </footer>
   );
 };

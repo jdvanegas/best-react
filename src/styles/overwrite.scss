@@ -1,0 +1,46 @@
+/*BOOTSTRAP*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  font-weight: 700;
+  &-primary {
+    @include button-color($purple, $purple-cake);
+  }
+}
+
+/*Toast*/
+
+@keyframes animate-opacity {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.toastContainer.bottom-center {
+  bottom: 60px !important;
+}
+
+.toast {
+  animation: animate-opacity 5s;
+}

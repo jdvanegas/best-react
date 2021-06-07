@@ -1,0 +1,32 @@
+$font-family-sans-serif: "Inter", sans-serif;
+
+$blue-primary: #0d6efd;
+$blue: #0086b3;
+$blue-cake: #ccf2ff;
+
+$green: #30b300;
+$green-cake: #daffcc;
+
+$yellow: #d5b810;
+$yellow-cake: #fbf5d0;
+
+$red: #c20a75;
+$red-cake: #fccfe9;
+
+$purple: #5e16b6;
+$purple-cake: #e4d2f9;
+
+/*Overwrite Bootstrap*/
+$primary: $purple;
+$secondary: #dee2e6;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": $red,
+);
+
+$input-border-radius: 0.5rem;
+$input-border-radius-sm: 0.5rem;
+$border-radius-lg: 0.75rem;
+/*Overwrite Bootstrap*/

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { GlobalContent } from "../models/global";
+import { GlobalContent } from "../models/types";
 
 export const AuthContext = createContext<any>(null);
 

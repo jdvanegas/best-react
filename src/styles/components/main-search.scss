@@ -1,0 +1,36 @@
+.main-search {
+  padding: 1rem;
+  text-align: center;
+  .search-autocomplete {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    input {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: none;
+      background-color: #f8f9fa;
+      padding: 1rem 1rem;
+      font-size: 20px;
+      font-weight: 500;
+      height: 50px;
+      &:hover,
+      &:focus,
+      &:active,
+      &:focus-visible {
+        box-shadow: 0 0.5rem 1rem #ddd;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+  p {
+    margin-top: 1rem;
+    color: #999;
+    span {
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+}

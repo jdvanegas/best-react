@@ -1,15 +1,36 @@
-/*Overwrite Bootstrap*/
-$primary: #031633;
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 
-$theme-colors: (
-  "primary": $primary,
-  "danger": #ff4136,
-);
-/*Overwrite Bootstrap*/
+@import "./styles/variables.scss";
+@import "./styles/functions.scss";
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "./styles/overwrite.scss";
 
 /*Shared Components*/
 @import "./styles/components/Shared/header.scss";
 @import "./styles/components/Shared/footer.scss";
+@import "./styles/components/Shared/loading.scss";
 /*Shared Components*/
+
+.ms-box {
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.ms-yellow {
+  background-color: $yellow-cake;
+  color: $yellow;
+  svg {
+    fill: $yellow;
+  }
+}
+
+.ms-blue {
+  background-color: $blue-cake;
+  color: $blue;
+  svg {
+    fill: $blue;
+  }
+}

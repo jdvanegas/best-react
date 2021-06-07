@@ -1,0 +1,18 @@
+.signin-form {
+  text-align: center;
+  margin: auto;
+  max-width: 500px;
+  input {
+    margin-top: 1rem;
+  }
+  .form-group {
+    text-align: left;
+    .form-text {
+      font-weight: 600;
+    }
+  }
+  button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

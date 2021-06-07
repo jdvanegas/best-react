@@ -1,57 +1,54 @@
-import { useState } from "react";
-import { GlobalContent, Nullable } from "../models/global";
-import { User } from "../models/user";
+import { useEffect, useState } from "react";
+import { notify } from "../helpers/functions";
+import { GlobalContent, Nullable } from "../models/types";
+import { User, UserSignup } from "../models/user";
+import { login, getData, register } from "../services/user-service";
 
 export const useProvideAuth = (): GlobalContent => {
   const [user, setUser] = useState<Nullable<User>>(null);
-
   // Wrap any Firebase methods we want to use making sure ...
   // ... to save the user to state.
-  const signin = (email: string, password: string, cb?: () => void) => {
-    setUser({ id: "1", name: "Usuario", lastName: "Logeado", email: email });
-    if (cb) cb();
+  const signin = async (email: string, password: string, cb?: () => void) => {
+    const { data, status } = await login({ email, password });
+    if (status) {
+      setUser(data);
+      localStorage.setItem("token", data.token);
+      if (cb) cb();
+    } else notify.error("Error al iniciar sesión");
   };
 
-  const signup = (user: User): User => {
-    return user;
+  const signup = async (user: UserSignup, cb?: () => void) => {
+    const { data, status } = await register(user);
+    if (status) {
+      setUser(data);
+      localStorage.setItem("token", data.token);
+      if (cb) cb();
+    } else notify.error("Error al crear la cuenta");
   };
 
   const signout = () => {
+    localStorage.removeItem("token");
     return setUser(null);
   };
 
-  const sendPasswordResetEmail = (email: string) => {
-    return;
-  };
-
-  const confirmPasswordReset = (code: string, password: string): boolean => {
-    return true;
-  };
-
-  // Subscribe to user on mount
-  // Because this sets state in the callback it will cause any ...
-  // ... component that utilizes this hook to re-render with the ...
-  // ... latest auth object.
-  // useEffect(() => {
-  // const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
-  //   if (user) {
-  //     setUser(user);
-  //   } else {
-  //     setUser(null);
-  //   }
-  // });
-  // // Cleanup subscription on unmount
-  // return () => unsubscribe();
-  // }, []);
+  useEffect(() => {
+    if (user === null) {
+      const token = localStorage.getItem("token");
+      if (token) {
+        getData().then((data) => {
+          setUser(data);
+        });
+      }
+    }
+  }, [user]);
 
   // Return the user object and auth methods
   return {
     user,
     isAuthenticated: user !== null,
+    isAdmin: user !== null && ["admin", "store"].includes(user.roleName),
     signin,
     signup,
     signout,
-    sendPasswordResetEmail,
-    confirmPasswordReset,
   };
 };

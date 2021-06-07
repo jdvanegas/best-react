@@ -1,0 +1,22 @@
+.ms-categories {
+  margin-top: 2rem;
+  .card {
+    padding: 1rem;
+    text-align: center;
+    border: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    &:hover {
+      box-shadow: 0 0.5rem 1rem #eee;
+    }
+    svg {
+      height: 50px;
+      width: 50px;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 1rem;
+    }
+  }
+}

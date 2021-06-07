@@ -1,12 +1,8 @@
 footer {
+  border-top: 1px solid $gray-300;
   width: 100%;
   position: fixed;
   bottom: 0;
   text-align: center;
   padding: 0.5rem;
-  color: $white;
-  background-color: $primary;
-  p {
-    margin-bottom: 0;
-  }
 }

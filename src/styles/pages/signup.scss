@@ -1,0 +1,16 @@
+.signup-form {
+  text-align: center;
+  margin: auto;
+  max-width: 600px;
+  .form-group {
+    text-align: left;
+    margin-top: 1rem;
+    .form-text {
+      font-weight: 600;
+    }
+  }
+  button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
